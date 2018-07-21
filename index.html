@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Myboke</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">我的博客</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">我的课堂</a></li>
+        <li><a href="#">我的足迹</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div id="main-carousel" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#main-carousel" data-slide-to="1"></li>
+				  </ol>
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img src="images/1.png" alt="">
+				    </div>
+				    <div class="item">
+				      <img src="images/2.png" alt="">
+				    </div>
+				  </div>
+
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+				<div class="panel panel-default">
+				 	<div class="panel-heading">移动设备优先</div>
+				  		<div class="panel-body">
+				    		其实通过jquery学习js是个不错的方法，首先jquery方便易上手(采用css的选择规范)其次就是不用考虑兼容性，其实很多js方法就是因为兼容性的问题导致被弃之不用，一些简单的操作因为兼容的写法变动复杂了许多，给我们学习也带来了很大的困扰，导致我们初学的时候不知道是用还是不用。使用jquery能使你放开手脚，放放心心的写自己的js代码，时间久了就能培养出自己的js思维，之后你会发现这东西其实是一样的，因为本身jquery就是js的一个框架，然后在再试着用原生js去实现jquery的效果，比如焦点图、时间轴等。之后再去经常看看原型、继承、闭包之类的比较深入的东西，记住是经常看看，再自己随手敲敲代码。
+				 		 </div>
+				 		 <div class="panel-heading">
+				 		 	<span class="glyphicon glyphicon-user">用户</span>
+							<span class="glyphicon glyphicon-phone">电话</span>
+				 		 	<span class="glyphicon glyphicon-heart"><em>1000</em>点击量</span>
+				 		 	<span class="glyphicon glyphicon-cog">设置</span>
+				 		 </div>
+					</div>
+			</div>
+			<div class="col-md-4 hidden-sm hidden-xs">
+			
+					<a href="#" class="thumbnail">
+						<img src="images/1.png" class="" alt="">
+					</a>
+				
+					<a href="#" class="thumbnail">
+						<img src="images/2.png" class="" alt="">
+					</a>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="lib/jQuery/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+</html>
