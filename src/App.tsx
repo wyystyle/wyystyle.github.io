@@ -1,47 +1,40 @@
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import routes from './routers'
-import { lazy } from 'react';
+import { routes } from './routers'
 import type {Extebds} from '@/routers'
-console.log('routes', routes)
-const Home = lazy(() => import('@/components/Home/Home.tsx'))
-const About = lazy(() => import('@/components/About/About.tsx'))
+import PageTitle from '@/common/PageTitle'
 // 递归渲染路由的函数
 const renderRoutes = (routes: Extebds) => {
   return routes.map((route) => {
+    // 确保 route.path 和 route.element 存在且有效
+    if (!route.path || !route.element) {
+      console.warn('Invalid route configuration:', route);
+      return null;
+    }
+  
+    const commonProps = {
+      path: route.path,
+      element: route.element,
+    };
+  
     if (route.children) {
       return (
-        <Route
-          key={route.path}
-          path={route.path}
-          element={route.element}
-        >
+        <Route key={ route.path } {...commonProps}>
           {renderRoutes(route.children)}
         </Route>
       );
     } else {
-      return (
-        <Route
-          key={route.path}
-          path={route.path}
-          element={route.element}
-        />
-      );
+      return <Route key={ route.path } {...commonProps} />;
     }
   });
   
 };
-console.log(renderRoutes(routes),"renderRoutes(routes)")
 const App = () => {
   return (
     <Router>
+      <PageTitle />
       <Routes>
-        {/* {renderRoutes(routes)} */}
-        <Route path="/" element={<Home />}>
-          <Route path="about" element={<About />}>
-          
-          </Route>
-        </Route>
+        {renderRoutes(routes)}
       </Routes>
     </Router>
   )

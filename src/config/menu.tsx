@@ -1,11 +1,20 @@
 import type { MenuProps } from 'antd';
 import React from 'react'
 import { UserOutlined } from '@ant-design/icons';
+
 const headerMenu: MenuProps['items'] = [
   {
-    key: 0,
-    label: '首页'
-  }
+    key: '/',
+    label: '首页',
+  },
+  {
+    key: '/commonlinks',
+    label: '常用链接',
+  },
+  {
+    key: '/about',
+    label: '关于我',
+  },
 ];
 
 interface ExtendedMenuProps extends MenuProps {
