@@ -1,0 +1,34 @@
+.carousel-container {
+  position: relative;
+  perspective: 100000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  animation: rotateCarousel 10s linear infinite; 
+  transform-origin: 50% 0;
+  /* background: #ccc; */
+}
+
+.carousel-item {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  border: 6px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 确保图片覆盖整个容器 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@keyframes rotateCarousel {
+  from {
+    transform:rotateX(-10deg) rotateY(0deg);
+  }
+  to {
+    transform:rotateX(-10deg) rotateY(-360deg);
+  }
+}

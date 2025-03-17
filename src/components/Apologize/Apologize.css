@@ -1,0 +1,163 @@
+/* Apologize.css */
+.galaxy-container {
+  min-height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.poetic-apology {
+  max-width: 800px;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2em;
+  color: #ff6b6b;
+  text-shadow: 0 0 20px rgba(255,107,107,0.5);
+  margin-bottom: 2rem;
+}
+
+.apology-content {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.poetic-line {
+  font-size: 1.5em;
+  color: #fff;
+  margin: 0;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 波浪浮动动画 */
+@keyframes wave-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+.animate-wave {
+  animation: wave-float 3s ease-in-out infinite;
+}
+
+/* 主标题悬浮动画 */
+@keyframes title-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.animate-float {
+  animation: title-float 4s ease-in-out infinite;
+}
+
+/* 心跳按钮 */
+.heartbeat-btn {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  border: 3px solid #ff6b6b;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.heart-icon {
+  display: inline-block;
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.3); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+  60% { transform: scale(1); }
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ff6b6b;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3em;
+  }
+  
+  .poetic-line {
+    font-size: 1.8em;
+  }
+  
+  .heartbeat-btn {
+    font-size: 1.5em;
+    padding: 1rem 2rem;
+  }
+}
+
+/* 心跳动画 */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* 量子爱心特效 */
+.quantum-heart {
+  position: fixed;
+  font-size: 24px;
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  animation: floatUp 1.5s ease-out;
+}
+
+@keyframes floatUp {
+  0% { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(-100vh) scale(2.5);
+  }
+}
+
+/* 重启状态样式 */
+.heartbeat-btn.restarting {
+  animation: heartbeat 1s infinite;
+  background: linear-gradient(45deg, #ff3366, #ff6b6b);
+}
+
+/* 闪光覆盖层 */
+.flash-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  opacity: 0;
+  animation: flash 0.5s;
+}
+
+@keyframes flash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

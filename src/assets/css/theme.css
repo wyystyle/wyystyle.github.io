@@ -1,4 +1,12 @@
 :root {
   --header-clolr: #ffffff;
   --breadcrumb-bg: #ffffff;
+
+  --homeBgColor: #000000;
+
+  --text-color:#ffffff;
+
+  --soft-blue: #ff9a9e;  /* 柔光蓝 */
+  --mint-frost: #fad0c4; /* 薄荷霜 */
+  --sun-kissed: #a1c4fd; /* 暖阳黄 */
 }

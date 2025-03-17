@@ -1,0 +1,14 @@
+.text {
+  font-family: 
+  "STXingkai",      /* 华文行楷（Windows系统自带） */
+  "STCaiyun",       /* 华文彩云（Windows系统自带） */
+  "FZShuTi",        /* 方正舒体（部分Windows预装） */
+  "Kaiti SC",       /* macOS/iOS 楷体优化版 */
+  "KaiTi",          /* 通用楷体降级方案 */
+  cursive !important;/* 最终降级到浏览器草书字体 */
+  
+  /* 增强特性 */
+  text-rendering: optimizeLegibility; /* 提升字体渲染效果 */
+  -webkit-font-smoothing: antialiased; /* Mac字体抗锯齿 */
+  font-size: 18px;
+}

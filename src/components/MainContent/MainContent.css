@@ -1,0 +1,60 @@
+/* 方案1：粉蓝青春渐变（水平过渡）*/
+.youth-bg1 {
+  background: linear-gradient(90deg, #ff9a9e 0%, /* 珊瑚粉 */ #fad0c4 50%, /* 奶油橙 */ #a1c4fd 100% /* 天空蓝 */);
+}
+
+/* 方案2：薄荷柠檬渐变（对角线过渡）*/
+.youth-bg2 {
+  background: linear-gradient(135deg, #43e97b 0%, /* 薄荷绿 */ #38f9d7 30%, /* 碧波蓝 */ #f6f54d 100% /* 柠檬黄 */);
+}
+.dynamic-youth-bg {
+  background: linear-gradient(120deg, var(--soft-blue), var(--mint-frost), var(--sun-kissed));
+  background-size: 100% 100%;
+  position: relative;
+}
+.dy-animation {
+  background-size: 200% 200%;
+  animation: gradientFlow 2s ease infinite;
+}
+/* 微光动画 */
+.dynamic-youth-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0) 30%);
+  pointer-events: none;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.send_input{
+  background: transparent;
+  color: var(--text-color);
+}
+.send_input.ant-input{
+  border: none;
+}
+.send_input.ant-input::placeholder{
+  color: var(--text-color);
+}
+.send_input.ant-input:focus{
+  background: transparent;
+  border: none !important;
+}
+.send_input.ant-input:hover{
+  background: transparent;
+  border: none !important;
+}

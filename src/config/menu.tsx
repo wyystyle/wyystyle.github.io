@@ -12,6 +12,10 @@ const headerMenu: MenuProps['items'] = [
     label: '常用链接',
   },
   {
+    key: '/apologize',
+    label: '张女士道歉信',
+  },
+  {
     key: '/about',
     label: '关于我',
   },

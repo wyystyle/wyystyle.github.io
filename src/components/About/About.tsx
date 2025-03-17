@@ -1,55 +1,33 @@
-import { AppDispatch, RootState } from '@/store/index';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '@/store/counterSlice';
-import { fetchCount } from '@/store/counterSliceAsync';
-import { Flex, Button } from 'antd';
-const About:React.FC = () => {
-    const count = useSelector((state: RootState) => state.counter.count)
-    const { asyncCount, status } = useSelector((state:RootState) => state.asyncCounter)
-    const dispatch = useDispatch<AppDispatch>() // 添加泛型类型标注
-    const handleAdd = () => {
-        dispatch(increment())
-    }
-    const handleDown = () => {
-        dispatch(decrement())
-    }
-
-    const handleAsyncAdd = async () => {
-        const params: any = { 
-            status: 'add',
-            value: asyncCount
-        }
-        try {
-            await dispatch(fetchCount(params))
-            // 可在此处理异步结果
-        } catch (error) {
-            console.error('Async add failed:', error)
-        }
-    }
-    const handleAsyncDown = async () => {
-        const params: any = { 
-            status: 'down',
-            value: asyncCount
-        }
-        try {
-            await dispatch(fetchCount(params))
-            // 可在此处理异步结果
-        } catch (error) {
-            console.error('Async down failed:', error)
-        }
-    }
+import './About.css'
+const About: React.FC = () => {
     return (
         <div>
-            <h1>Count:{count}</h1>
-            <Flex gap="small" wrap>
-                <Button onClick={()=>{handleAdd()}} type="primary">Count ++</Button>
-                <Button onClick={()=>{handleDown()}}>Count --</Button>
-            </Flex>
-            <h1>asyncCount:{asyncCount} {status}</h1>
-            <Flex gap="small" wrap>
-                <Button onClick={()=>{handleAsyncAdd()}} type="primary">Count ++</Button>
-                <Button onClick={()=>{handleAsyncDown()}}>Count --</Button>
-            </Flex>
+            <p className="text">
+                大家好，我是[wyy]，一个行走在像素与代码之间的"前端攻城狮" ✨<br />
+                有人说我是「人形编译器」，也有人叫我「bug收割机」，但我觉得自己更像是数字世界的装修队长——左手拎着CSS油漆桶，右手挥舞JavaScript电钻，在浏览器的工地上一边骂骂咧咧，一边把设计稿变成会动的艺术品。<br />
+                我的日常技能包括但不限于：<br />
+                ✅ 用HTML给网页搭骨架（虽然偶尔会搭成骨质疏松）<br />
+                ✅ 用CSS给界面化妆（甲方要的"五彩斑斓的黑"已解锁）<br />
+                ✅ 用JavaScript让按钮学会后空翻（然后卡在转体三周半）<br />
+                ✅ 在Chrome开发者工具里反复仰卧起坐（F12是我的人生快捷键）<br />
+                ✅ 和IE浏览器讲鬼故事（"从前有个浏览器…算了你肯定听不懂"）<br />
+                我的特异功能：<br />
+                🔮 一眼看出1px的边框不对齐（然后被设计师追杀）<br />
+                🔮 用console.log()在代码海洋里扔漂流瓶求救<br />
+                🔮 在Stack Overflow复制粘贴时假装自己在认真coding<br />
+                🔮 把"这需求很简单"翻译成"这需求要加班"<br />
+                最近沉迷于：<br />
+                ☕ 用咖啡因发电，把React组件写成俄罗斯套娃<br />
+                🐛 和浏览器缓存玩捉迷藏（永远输给那个叫Ctrl+F5的小孩）<br />
+                🤯 试图用Flex布局让div们排队做早操（第三列总有人开小差）<br />
+                虽然经常因为Safari和Chrome打架而怀疑人生，但每当看到自己写的按钮丝滑得能去德芙广告里客串，就觉得——啊，这大概就是赛博世界的浪漫吧！<br />
+                如果你想：<br />
+                🚀 让网页加载快过双十一抢购<br />
+                🎨 把甲方脑洞变成会呼吸的界面<br />
+                🤖 找一个能一边吐槽IE一边修好IE的人类<br />
+                ——恭喜你，你找到了一个会写代码的段子手（划掉）专业前端开发！<br />
+                PS：接不接半夜改需求电话取决于你带的奶茶甜度。
+            </p>
         </div>
     )
 }

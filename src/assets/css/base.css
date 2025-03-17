@@ -1,4 +1,33 @@
 @import './theme.css';
+body:not([class]) {
+  font-family: 
+  "STXingkai",      /* 华文行楷（Windows系统自带） */
+  "STCaiyun",       /* 华文彩云（Windows系统自带） */
+  "FZShuTi",        /* 方正舒体（部分Windows预装） */
+  "Kaiti SC",       /* macOS/iOS 楷体优化版 */
+  "KaiTi",          /* 通用楷体降级方案 */
+  cursive !important;/* 最终降级到浏览器草书字体 */
+  
+  /* 增强特性 */
+  text-rendering: optimizeLegibility; /* 提升字体渲染效果 */
+  -webkit-font-smoothing: antialiased; /* Mac字体抗锯齿 */
+}
+button, input, textarea, pre {
+  font-family: inherit !important;
+}
+
+/* 覆盖antd字体样式 */
+[class^="ant-"], 
+[class*=" ant-"] {
+  font-family: inherit !important;
+}
+
+/* 特殊处理图标组件 */
+.anticon {
+  font-family: "anticon" !important; /* 保留图标字体 */
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -64,4 +93,8 @@ body{
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   background-color: #7d7d7d;
+}
+
+.cursor{
+  cursor: pointer;
 }

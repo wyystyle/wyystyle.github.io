@@ -5,6 +5,7 @@ import { JSX, lazy } from 'react';
 const Home = lazy(() => import('@/components/Home/Home.tsx'))
 const About = lazy(() => import('@/components/About/About.tsx'))
 const CommonLinks = lazy(() => import('@/components/CommonLinks/CommonLinks.tsx'))
+const Apologize = lazy(() => import('@/components/Apologize/Apologize.tsx'))
 
 export type Extebds = (MyRouteObject & RouteObject)[]
 
@@ -23,7 +24,7 @@ const routes: Extebds = [
       {
         path: 'about',
         element: <About />,
-        label: '关于',
+        label: '关于我',
       },
       {
         path: 'user',
@@ -34,6 +35,11 @@ const routes: Extebds = [
         path: 'commonlinks',
         element: <CommonLinks />,
         label: '常用链接',
+      },
+      {
+        path: 'apologize',
+        element: <Apologize />,
+        label: '张女士道歉信',
       },
     ],
   },
